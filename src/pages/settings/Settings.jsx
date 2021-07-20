@@ -7,7 +7,7 @@ export default function Settings() {
       <div className="settingsWrapper">
         <div className="settingsTitle">
           <span className="settingsUpdateTitle">Update Your Account</span>
-          <span className="settingsDeleteTitle">Delete Account</span>
+          <span className="settingsDeleteTitle bn632-hover bn28">Delete Account</span>
         </div>
         <form className="settingsForm">
           <div className="settingsPP">
@@ -24,7 +24,7 @@ export default function Settings() {
             <input type="email" placeholder="groot@atul-anand.com" />
             <label>Password</label>
             <input type="password" />
-            <button className="settingsSubmit">Update</button>
+            <button className="settingsSubmit bn632-hover bn22">Update</button>
           </div>
         </form>
       </div>
