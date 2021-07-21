@@ -49,6 +49,11 @@
   cursor: pointer;
 }
 
+.topListItemX{
+  margin: 5px;
+  font-size: 16px;
+}
+
 .topSearchIcon{
   font-size: 18px;
   color: #666;
