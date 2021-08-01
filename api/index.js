@@ -8,8 +8,12 @@ const postsRoute = require("./routes/posts");
 const categoriesRoute = require("./routes/categories");
 const multer = require("multer");
 
+const cors = require("cors");
+
+
 dotenv.config();
 app.use(express.json());
+app.use(cors());
 
 mongoose.connect(process.env.Mongo_URL, {
   useNewUrlParser: true,
