@@ -7,13 +7,13 @@ const usersRoute = require("./routes/users");
 const postsRoute = require("./routes/posts");
 const categoriesRoute = require("./routes/categories");
 const multer = require("multer");
-
 const cors = require("cors");
-
+const path = require("path");
 
 dotenv.config();
 app.use(express.json());
 app.use(cors());
+app.use("/images", express.static(path.join(__dirname,"/images")));
 
 mongoose.connect(process.env.Mongo_URL, {
   useNewUrlParser: true,

@@ -14,6 +14,14 @@
   position: relative;
 }
 
+.writeError{
+  color: red;
+  font-size: 0.75em;
+  padding-top: 5px;
+  ;
+  padding-left: 150px;
+}
+
 .writeFormGroup {
   margin-left: 150px;
   display: flex;

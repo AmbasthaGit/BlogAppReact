@@ -37,6 +37,12 @@
   outline: none;
 }
 
+.loginWarning{
+  padding-top: 5px;
+  color: red;
+  font-size: 0.75em;
+}
+
 .loginButton {
   margin-top: 20px;
   cursor: pointer;
@@ -46,6 +52,11 @@
   border: none;
   border-radius: 10px;
   text-align: center;
+}
+
+.loginButton:disabled{
+  cursor: not-allowed;
+  /* background-color: #fff; */
 }
 
 .loginRegisterButton {
