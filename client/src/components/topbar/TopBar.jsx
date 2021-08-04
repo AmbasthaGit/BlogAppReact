@@ -6,6 +6,7 @@ import "./topbar.css";
 export default function TopBar(){
 
   const {user, dispatch} = useContext(Context);
+  const PF = "http://localhost:5000/images/";
 
   const handleLogout = (e)=>{
     dispatch({type:"LOGOUT"});
@@ -14,9 +15,15 @@ export default function TopBar(){
   return(
     <div className="top">
       <div className="topLeft">
-        <i className="topIcon fab fa-facebook-square"></i>
-        <i className="topIcon fab fa-twitter-square"></i>
-        <i className="topIcon fab fa-instagram-square"></i>
+        <a href="https://www.facebook.com/atul55anand" className="link" target="_blank" rel="noreferrer">
+          <i className="topIcon fab fa-facebook-square"></i>
+        </a>
+        <a href="https://instagram.com/atul13a?utm_medium=copy_link" className="link" target="_blank" rel="noreferrer">
+          <i className="topIcon fab fa-instagram-square"></i>
+        </a>
+        <a href="twitter.com" className="link" target="_blank" rel="noreferrer">
+          <i className="topIcon fab fa-twitter-square"></i>
+        </a>
       </div>
       <div className="topCenter">
         <ul className="topList">
@@ -39,7 +46,11 @@ export default function TopBar(){
       </div>
       <div className="topRight">
         {
-          user ? <img className="topImg" src={user.profilePic? user.profilePic : "https://ambitioustracks.com/wp-content/uploads/2017/01/1.-fundadores.png"} alt=""/> :
+          user ? 
+          <Link to="/settings">
+            <img className="topImg" src={user.profilePic? PF + user.profilePic : "https://ambitioustracks.com/wp-content/uploads/2017/01/1.-fundadores.png"} alt=""/>
+          </Link>
+           :
           (
             <ul className="topList">
               <li className="topListItemX">

@@ -9,10 +9,12 @@ export default function Register() {
   const [password, setPassword ] = useState("");
   const [email, setEmail ] = useState("");
   const [error, setError ] = useState(false);
+  const [working, setWorking] = useState(false);
 
 
   const handleSubmit = async (e)=>{
     setError(false);
+    setWorking(true);
     e.preventDefault();
     try{
       const res = await axios.post("/auth/register",{
@@ -46,7 +48,9 @@ export default function Register() {
         onChange={e=>setPassword(e.target.value)}
         />
         {error && <p className="err">* Username/Email already in use!</p>}
-        <button className="registerButton" type="submit">Register</button>
+        <button className="registerButton" type="submit" disabled={working}>
+        {working ? <i class="fa fa-spinner fa-spin"></i>: `Register`}
+        </button>
       </form>
       <button className="registerLoginButton">
         <Link to="/login" className="link">Login</Link>

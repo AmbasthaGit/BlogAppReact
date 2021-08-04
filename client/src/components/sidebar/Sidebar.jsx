@@ -11,7 +11,6 @@ export default function Sidebar() {
     const getCats = async ()=>{
       const res = await axios.get("/categories");
       setCats(res.data);
-      console.log(res.data);
     }
     getCats();
   }, []);
@@ -22,26 +21,33 @@ export default function Sidebar() {
         <span className="sidebarTitle">ABOUT ME</span>
         <img src="https://themegoods-cdn-pzbycso8wng.stackpathdns.com/grandblog/demo/wp-content/uploads/2015/11/aboutme.jpg" alt="" />
         <p>
-          Laboris sunt aute cupidatat velit magna velit ullamco dolore mollit
-          amet ex esse.Sunt eu ut nostrud id quis proident.
+        A learner, an investor, a writer, and an independent thinker.
+        <br></br><br></br>
+        I believe in innovation, and creating things (whether a business or a piece of art, each adds value to our world).
         </p>
       </div>
       <div className="sidebarItem">
-        <span className="sidebarTitle">CATEGORIES</span>
+        {/* <span className="sidebarTitle">CATEGORIES</span>
         <ul className="sidebarList">
           {cats.map(c=>(
             <Link to={`/?cat=${c.name}`} className="link">
             <li className="sidebarListItem">{c.name}</li>
             </Link>
           ))}
-        </ul>
+        </ul> */}
       </div>
       <div className="sidebarItem">
         <span className="sidebarTitle">FOLLOW ME</span>
         <div className="sidebarSocial">
-          <i className="sidebarIcon fab fa-facebook-square"></i>
-          <i className="sidebarIcon fab fa-instagram-square"></i>
-          <i className="sidebarIcon fab fa-twitter-square"></i>
+          <a className="link" href="https://www.facebook.com/atul55anand" target="_blank" rel="noreferrer">
+            <i className="sidebarIcon fab fa-facebook-square"></i>
+          </a>
+          <a className="link" href="https://instagram.com/atul13a?utm_medium=copy_link" target="_blank" rel="noreferrer">
+            <i className="sidebarIcon fab fa-instagram-square"></i>
+          </a>
+          <Link className="link">
+            <i className="sidebarIcon fab fa-twitter-square"></i>
+          </Link>
         </div>
       </div>
     </div>
